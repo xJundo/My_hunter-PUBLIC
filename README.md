@@ -28,7 +28,7 @@ You can add more and more dinosaurs with the settings. The bar can up to 5 dinos
 | --- | --- |
 | Resize options | |
 | More settings | |
-| Game Over different when best score is beaten | |
+| Game Over different when best score is beaten | ✅ |
 | Apocalypse mode | |
 | A real Game Desing identity | |
 
