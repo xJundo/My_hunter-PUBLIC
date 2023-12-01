@@ -13,6 +13,5 @@
 
 int flag_m(va_list list, formating_t *formating)
 {
-    my_putstr(strerror(errno));
-    return my_strlen(strerror(errno));
+    return 0;
 }

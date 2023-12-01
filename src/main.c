@@ -9,13 +9,9 @@
 #include "../include/csfml.h"
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
-#include <stdbool.h>
 #include <malloc.h>
 #include <stdlib.h>
 #include <time.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/stat.h>
 
 score_t *init_best_score(game_info_t *game_info)
 {
@@ -77,9 +73,8 @@ void draw_everything(game_info_t *game_info)
     }
 }
 
-void print_help(char **av)
+int print_help(char **av)
 {
-    if (my_strcmp(av[1], "-h") == 0) {
         my_printf("USAGE\n    make && ./my_hunter\n");
         my_printf("DESCRIPTION\n    On this game you have to kill dinosaurs\n"
         "    We consider that you lose when you miss 3 times or when\n"
@@ -97,8 +92,6 @@ void print_help(char **av)
         "    ---GAME OVER---\n"
         "        PRESS R = Restart Game with saved settings !\n"
         "        PRESS Q = Leave Game");
-    } else
-        exit(84);
 }
 
 int main(int ac, char **av)
@@ -106,11 +99,12 @@ int main(int ac, char **av)
     game_info_t game_info;
 
     if (ac > 2)
-        exit(84);
-    if (ac == 2) {
+        return 84;
+    if (ac == 2 && (my_strcmp(av[1], "-h") == 0)) {
         print_help(av);
         return 0;
-    }
+    } else if (ac == 2 && my_strcmp(av[1], "-h") != 0)
+        return 84;
     game_info = init_game();
     srand(time(NULL));
     game_info.info_window->delay = 0;

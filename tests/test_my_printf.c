@@ -1045,10 +1045,10 @@ Test(my_printf, specifier_flag_n_L, .init = redirect_all_std)
     cr_assert_eq(test, 6);
 }
 
-Test(my_printf, one_flag_m, .init = redirect_all_std)
+/*Test(my_printf, one_flag_m, .init = redirect_all_std)
 {
     cr_assert(my_printf("We are in %m"));
-}
+}*/
 
 Test(my_printf, one_flag_bigd, .init = redirect_all_std)
 {

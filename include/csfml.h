@@ -207,6 +207,7 @@ void move_sprite(game_info_t *game_info, npc_t *);
 void set_bird_pos(game_info_t *game_info, npc_t *current_bird);
 void update_score(score_t *set_score);
 void display_score(game_info_t *);
+void set_move_from_time(game_info_t *game_info, npc_t *current_bird);
 
 void hit_condition(game_info_t *game_info, npc_t *current_bird,
     bool *bird_hit);

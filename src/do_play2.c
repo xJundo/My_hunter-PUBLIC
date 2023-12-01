@@ -5,10 +5,9 @@
 ** main
 */
 
-#include <sys/stat.h>
-#include <unistd.h>
 #include "../include/my.h"
 #include "../include/csfml.h"
+
 
 void check_life(game_info_t *game_info)
 {

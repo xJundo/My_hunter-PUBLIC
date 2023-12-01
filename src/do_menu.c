@@ -53,7 +53,7 @@ void init_info_window(game_info_t *game_info)
     game_info->info_window->video_mode = (sfVideoMode) {1920, 1080, 32};
     game_info->info_window->my_window =
     sfRenderWindow_create(game_info->info_window->video_mode,
-    "my_window", sfClose, NULL);
+    "my_window", sfNone, NULL);
     sfRenderWindow_setPosition(game_info->info_window->my_window,
     (sfVector2i) {0, 0});
     game_info->info_window->f = 60;
